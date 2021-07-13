@@ -42,7 +42,7 @@ function generatePassword() {
   useNumber = prompt("Should numbers be used in your new password? ", "Yes");
     useNumber = verifyPrompt(useNumber);
 
-  useSymbol = prompt("Should symbols be used in your new password? \nThese include: ! @ # $ % ^ & * ( ) { } [ ] < > , . / ", "Yes");
+  useSymbol = prompt("Should symbols be used in your new password? \nThese include: ! # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~ and whitespace", "Yes");
     useSymbol = verifyPrompt(useSymbol);
 
   const returnPassword = buildPassword(useLower, useUpper, useNumber, useSymbol, passwordLength);
@@ -111,7 +111,7 @@ function getRandomNumber() {
 
 function getRandomSymbol() {
   // Definied list of symbols that don't break the code
-  const symbols = '!@#$%^&*(){}[]=<>/,.';
+  const symbols = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
