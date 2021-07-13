@@ -30,42 +30,20 @@ function generatePassword() {
     while (passwordLength < 8 || passwordLength > 128) {
       passwordLength = prompt ("Please choose a password between 8 and 128 characters: ", 20);
     }
-    alert ("The password length will be " + passwordLength);
 
   // Begin selecting password character options
   useLower = prompt("Should lower case letters be used in your new password? (Yes or No) ", "Yes");
     // Checking that entry is yes, Yes or no, No. Also that it is boolean
     useLower = verifyPrompt(useLower);
-    if (useLower === true) {
-      alert("Lower case letters will be included");
-    } else if (useLower === false) {
-      alert("Lower case letters will NOT be included");
-    }
 
   useUpper = prompt("Should upper case letters be used in your new password? ", "Yes");
     useUpper = verifyPrompt(useUpper);
-    if (useUpper === true) {
-      alert("Upper case letters will be included");
-    } else if (useUpper === false) {
-      alert("Upper case letters will NOT be included");
-    }
 
   useNumber = prompt("Should numbers be used in your new password? ", "Yes");
     useNumber = verifyPrompt(useNumber);
-    if (useNumber === true) {
-      alert("Numbers will be included");
-    } else if (useNumber === false) {
-      alert("Numbers will NOT be included");
-    }
 
   useSymbol = prompt("Should symbols be used in your new password? \nThese include: ! @ # $ % ^ & * ( ) { } [ ] < > , . / ", "Yes");
     useSymbol = verifyPrompt(useSymbol);
-    if (useSymbol === true) {
-      alert("Symbols will be included");
-    } else if (useSymbol === false) {
-      alert("Symbols will NOT be included");
-    }
-  console.log("Lowers? " + useLower + " Uppers? " + useUpper + " Numbers? " + useNumber + " Symbols? " + useSymbol);
 
   const returnPassword = buildPassword(useLower, useUpper, useNumber, useSymbol, passwordLength);
   return returnPassword;
